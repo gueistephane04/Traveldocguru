@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Doc Guru - Votre Expert en Immigration</title>
+    <title>Travel Doc Guru - Your Immigration Expert</title>
     <style>
         * {
             margin: 0;
@@ -359,213 +359,248 @@
                 transform: translateX(-50%) translateY(-5px);
             }
         }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .language-switcher a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher a.active {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .language-switcher a:hover {
+            background: #3b82f6;
+            color: white;
+        }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <a href="#" class="active">EN</a>
+        <a href="#" onclick="switchToFrench()">FR</a>
+    </div>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Travel Doc Guru</h1>
-            <p class="subtitle">Votre expert en immigration disponible 24h/24</p>
+            <p class="subtitle">Your 24/7 immigration expert</p>
             
             <div class="flags">
                 <div class="flag canada" title="Canada"></div>
-                <div class="flag germany" title="Allemagne"></div>
-                <div class="flag usa" title="États-Unis"></div>
-                <div class="flag uk" title="Royaume-Uni"></div>
-                <div class="flag spain" title="Espagne"></div>
+                <div class="flag germany" title="Germany"></div>
+                <div class="flag usa" title="United States"></div>
+                <div class="flag uk" title="United Kingdom"></div>
+                <div class="flag spain" title="Spain"></div>
                 <div class="flag france" title="France"></div>
             </div>
             
-            <a href="#expertise" class="cta-button">Découvrir mon expertise</a>
+            <a href="#expertise" class="cta-button">Discover my expertise</a>
         </div>
         
         <div class="scroll-indicator">
             <div style="font-size: 2rem;">↓</div>
-            <div>Faites défiler</div>
+            <div>Scroll down</div>
         </div>
     </section>
 
     <div class="content">
         <section id="expertise" class="section">
-            <h2>Mon Expertise</h2>
+            <h2>My Expertise</h2>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Spécialisation Multi-Pays</h3>
-                    <p>Expert en immigration pour <span class="highlight">6 destinations privilégiées</span> : Canada, Allemagne, États-Unis, Royaume-Uni, Espagne et France. Je maîtrise les spécificités de chaque système d'immigration.</p>
+                    <h3>Multi-Country Specialization</h3>
+                    <p>Immigration expert for <span class="highlight">6 preferred destinations</span>: Canada, Germany, United States, United Kingdom, Spain and France. I master the specifics of each immigration system.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3>Informations Officielles</h3>
-                    <p>Toutes mes réponses sont <span class="highlight">exclusivement basées</span> sur les informations officielles des gouvernements. Fini les informations contradictoires ou périmées.</p>
+                    <h3>Official Information</h3>
+                    <p>All my answers are <span class="highlight">exclusively based</span> on official government information. No more contradictory or outdated information.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Réponses Précises & Structurées</h3>
-                    <p>Je vous fournis des réponses <span class="highlight">claires et organisées</span>, adaptées à votre situation spécifique pour faciliter vos démarches.</p>
+                    <h3>Precise & Structured Answers</h3>
+                    <p>I provide you with <span class="highlight">clear and organized</span> responses, tailored to your specific situation to facilitate your procedures.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2>Votre Consultant Personnel</h2>
+            <h2>Your Personal Consultant</h2>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">🕐</div>
-                    <h3>Disponible 24h/24</h3>
-                    <p>Pas d'horaires de bureau, pas d'attente. Je suis votre <span class="highlight">consultant personnel</span> accessible à tout moment, quand vous en avez besoin.</p>
+                    <h3>Available 24/7</h3>
+                    <p>No office hours, no waiting. I am your <span class="highlight">personal consultant</span> accessible at any time, when you need it.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Conseils Personnalisés</h3>
-                    <p>Mes services sont <span class="highlight">adaptés à votre profil</span>. Obtenez des recommandations ciblées selon votre situation spécifique.</p>
+                    <h3>Personalized Advice</h3>
+                    <p>My services are <span class="highlight">adapted to your profile</span>. Get targeted recommendations according to your specific situation.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
-                    <h3>Navigation Simplifiée</h3>
-                    <p>Fini les heures perdues sur les sites gouvernementaux complexes. Je <span class="highlight">simplifie l'accès</span> à l'information dont vous avez besoin.</p>
+                    <h3>Simplified Navigation</h3>
+                    <p>No more hours lost on complex government websites. I <span class="highlight">simplify access</span> to the information you need.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2>Ma Méthodologie</h2>
+            <h2>My Methodology</h2>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">⏱️</div>
-                    <h3>Délai de Réponse</h3>
-                    <p>Mes réponses nécessitent généralement <span class="highlight">20 à 45 secondes</span> de traitement. Ce délai garantit la qualité et la précision de l'information.</p>
+                    <h3>Response Time</h3>
+                    <p>My responses generally require <span class="highlight">20 to 45 seconds</span> of processing. This delay guarantees the quality and accuracy of the information.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
-                    <h3>Vérification Multi-Sources</h3>
-                    <p>Je vérifie <span class="highlight">systématiquement plusieurs sources officielles</span> en temps réel pour vous garantir des informations fiables.</p>
+                    <h3>Multi-Source Verification</h3>
+                    <p>I <span class="highlight">systematically verify multiple official sources</span> in real time to guarantee you reliable information.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>Informations à Jour</h3>
-                    <p>Grâce à ma méthodologie rigoureuse, vous obtenez des informations <span class="highlight">pertinentes, fiables et actualisées</span>.</p>
+                    <h3>Up-to-Date Information</h3>
+                    <p>Thanks to my rigorous methodology, you get information that is <span class="highlight">relevant, reliable and updated</span>.</p>
                 </div>
             </div>
         </section>
     </div>
 
     <section class="stats">
-        <h2 style="color: white; margin-bottom: 3rem;">Impact Mesuré sur les Cabinets d'Immigration</h2>
+        <h2 style="color: white; margin-bottom: 3rem;">Measured Impact on Immigration Firms</h2>
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">80%</div>
-                <div class="stat-label">Temps économisé</div>
+                <div class="stat-label">Time saved</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">300%</div>
-                <div class="stat-label">ROI moyen</div>
+                <div class="stat-label">Average ROI</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">15+</div>
-                <div class="stat-label">Cabinets interrogés</div>
+                <div class="stat-label">Firms surveyed</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">3x</div>
-                <div class="stat-label">Plus de clients</div>
+                <div class="stat-label">More clients</div>
             </div>
         </div>
     </section>
 
     <div class="content">
         <section class="section" style="text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 3rem; border-radius: 20px; margin: 4rem 0; border: 2px solid #10b981;">
-            <h2 style="color: #1f2937;">Cabinets d'Immigration : Automatisez vos Consultations</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #555;">Vous perdez 12-15h/semaine sur les questions répétitives de vos clients ?</p>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #667;">Travel Doc Guru peut être intégré dans votre cabinet pour automatiser 80% des consultations de base.</p>
+            <h2 style="color: #1f2937;">Immigration Firms: Automate Your Consultations</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #555;">Do you lose 12-15h/week on repetitive client questions?</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #667;">Travel Doc Guru can be integrated into your firm to automate 80% of basic consultations.</p>
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="#demo" class="cta-button">Demander une démo</a>
-                <a href="#contact" class="cta-button" style="background: linear-gradient(45deg, #3b82f6, #1e3a8a);">Parler à un expert</a>
+                <a href="#demo" class="cta-button">Request a demo</a>
+                <a href="#contact" class="cta-button" style="background: linear-gradient(45deg, #3b82f6, #1e3a8a);">Talk to an expert</a>
             </div>
         </section>
 
         <section id="business" class="section">
-            <h2>Solution B2B pour Cabinets d'Immigration</h2>
+            <h2>B2B Solution for Immigration Firms</h2>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
-                    <h3>Intégration Cabinet</h3>
-                    <p>Travel Doc Guru se déploie dans votre infrastructure existante. <span class="highlight">Votre marque, votre expertise</span>, notre technologie IA.</p>
+                    <h3>Firm Integration</h3>
+                    <p>Travel Doc Guru deploys in your existing infrastructure. <span class="highlight">Your brand, your expertise</span>, our AI technology.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
-                    <h3>Économie de Temps</h3>
-                    <p>Réduisez de <span class="highlight">80% le temps</span> consacré aux questions répétitives. Vos avocats se concentrent sur les cas complexes.</p>
+                    <h3>Time Savings</h3>
+                    <p>Reduce by <span class="highlight">80% the time</span> spent on repetitive questions. Your lawyers focus on complex cases.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">📈</div>
-                    <h3>Augmentation du CA</h3>
-                    <p>Servez <span class="highlight">3x plus de clients</span> avec la même équipe. ROI moyen de 300% dès la première année.</p>
+                    <h3>Revenue Increase</h3>
+                    <p>Serve <span class="highlight">3x more clients</span> with the same team. Average ROI of 300% from the first year.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" style="background: #f8fafc; padding: 3rem; border-radius: 15px; border: 2px solid #e2e8f0;">
-            <h2 style="text-align: center; color: #1f2937;">Étude de Marché 2025 - Automatisation des Cabinets</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">Nous menons actuellement une étude sur l'automatisation dans les cabinets d'immigration nord-américains.</p>
+            <h2 style="text-align: center; color: #1f2937;">Market Study 2025 - Firm Automation</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">We are currently conducting a study on automation in North American immigration firms.</p>
             
             <div class="features">
                 <div class="feature-card" style="border: 2px solid #1e3a8a;">
                     <div class="feature-icon">🎯</div>
-                    <h3>Objectif de l'Étude</h3>
-                    <p>Comprendre les défis technologiques des cabinets d'immigration et identifier les solutions d'automatisation les plus pertinentes.</p>
+                    <h3>Study Objective</h3>
+                    <p>Understand the technological challenges of immigration firms and identify the most relevant automation solutions.</p>
                 </div>
                 
                 <div class="feature-card" style="border: 2px solid #10b981;">
                     <div class="feature-icon">📊</div>
-                    <h3>Votre Participation</h3>
-                    <p>15 minutes d'entretien confidentiel pour partager votre expérience. En échange : accès privilégié aux résultats de l'étude.</p>
+                    <h3>Your Participation</h3>
+                    <p>15 minutes of confidential interview to share your experience. In exchange: privileged access to study results.</p>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="#contact" class="cta-button">Participer à l'étude</a>
+                <a href="#contact" class="cta-button">Participate in the study</a>
             </div>
         </section>
     </div>
 
     <footer class="footer" id="contact">
         <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-            <h3 style="margin-bottom: 1rem; color: #10b981;">Contactez-nous</h3>
+            <h3 style="margin-bottom: 1rem; color: #10b981;">Contact Us</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
                 <div>
-                    <h4 style="margin-bottom: 0.5rem;">Pour les Particuliers</h4>
-                    <p>Consultations expertes 24/7</p>
-                    <p>📧 questions@traveldocguru.com</p>
+                    <h4 style="margin-bottom: 0.5rem;">For Individuals</h4>
+                    <p>Expert consultations 24/7</p>
+                    <p>📧 infos@traveldocguru.com</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 0.5rem;">Pour les Cabinets</h4>
-                    <p>Démos et intégrations B2B</p>
-                    <p>📧 business@traveldocguru.com</p>
-                    <p>📞 +1 (438) 800-GURU</p>
+                    <h4 style="margin-bottom: 0.5rem;">For Firms</h4>
+                    <p>B2B demos and integrations</p>
+                    <p>📧 infos@traveldocguru.com</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 0.5rem;">Étude de Marché</h4>
-                    <p>Participation confidentielle</p>
-                    <p>📧 research@traveldocguru.com</p>
-                    <p>🎁 Résultats exclusifs</p>
+                    <h4 style="margin-bottom: 0.5rem;">Market Study</h4>
+                    <p>Confidential participation</p>
+                    <p>📧 infos@traveldocguru.com</p>
+                    <p>🎁 Exclusive results</p>
                 </div>
             </div>
         </div>
         <hr style="margin: 2rem 0; opacity: 0.3;">
-        <p>&copy; 2025 Travel Doc Guru - Votre expert en immigration de confiance</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Informations basées exclusivement sur les sources gouvernementales officielles</p>
+        <p>&copy; 2025 Travel Doc Guru - Your trusted immigration expert</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Information based exclusively on official government sources</p>
     </footer>
 
     <script>
-        // Animation au scroll
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -583,7 +618,7 @@
             observer.observe(section);
         });
 
-        // Smooth scroll pour les liens
+        // Smooth scroll for links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -597,7 +632,7 @@
             });
         });
 
-        // Animation des drapeaux au chargement
+        // Flag animation on load
         window.addEventListener('load', () => {
             const flags = document.querySelectorAll('.flag');
             flags.forEach((flag, index) => {
@@ -605,25 +640,30 @@
             });
         });
 
-        // CTA pour l'étude de marché
+        // CTA for market study
         const studyButtons = document.querySelectorAll('a[href="#contact"]');
         studyButtons.forEach(button => {
-            if (button.textContent.includes('étude') || button.textContent.includes('expert')) {
+            if (button.textContent.includes('study') || button.textContent.includes('expert')) {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    alert('Merci pour votre intérêt ! Un email sera envoyé à research@traveldocguru.com pour organiser votre entretien de 15 minutes.');
+                    alert('Thank you for your interest! An email will be sent to infos@traveldocguru.com to organize your 15-minute interview.');
                 });
             }
         });
 
-        // CTA pour les démos B2B
+        // CTA for B2B demos
         const demoButtons = document.querySelectorAll('a[href="#demo"]');
         demoButtons.forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('Démo personnalisée demandée ! Un expert vous contactera sous 24h à business@traveldocguru.com');
+                alert('Personalized demo requested! An expert will contact you within 24h at infos@traveldocguru.com');
             });
         });
+
+        // Language switcher function
+        function switchToFrench() {
+            alert('French version will be available soon! / Version française bientôt disponible!');
+        }
     </script>
 </body>
 </html>
