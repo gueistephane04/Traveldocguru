@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Doc Guru - Votre Expert en Immigration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInFromLeft 1.2s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInFromRight 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .flag {
+            width: 60px;
+            height: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        .flag:hover {
+            transform: scale(1.1) rotateY(10deg);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .flag.canada { background: linear-gradient(to bottom, #ff0000 0%, #ff0000 50%, #ffffff 50%, #ffffff 100%); }
+        .flag.germany { background: linear-gradient(to bottom, #000000 0%, #000000 33%, #ff0000 33%, #ff0000 66%, #ffff00 66%, #ffff00 100%); }
+        .flag.usa { background: linear-gradient(45deg, #002868 0%, #002868 50%, #bf0a30 50%, #bf0a30 100%); }
+        .flag.uk { background: linear-gradient(45deg, #012169 0%, #012169 50%, #ffffff 50%, #ffffff 100%); }
+        .flag.spain { background: linear-gradient(to bottom, #aa151b 0%, #aa151b 25%, #f1bf00 25%, #f1bf00 75%, #aa151b 75%, #aa151b 100%); }
+        .flag.france { background: linear-gradient(to right, #002395 0%, #002395 33%, #ffffff 33%, #ffffff 66%, #ed2939 66%, #ed2939 100%); }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+            50% {
+                box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+                transform: translateY(-2px);
+            }
+            100% {
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            animation: none;
+        }
+
+        .content {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #1e3a8a, #059669);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #1e3a8a, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #10b981;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .flags {
+                gap: 0.5rem;
+            }
+            
+            .flag {
+                width: 45px;
+                height: 30px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .language-switcher a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher a.active {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .language-switcher a:hover {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="#" onclick="switchToEnglish()">EN</a>
+        <a href="#" class="active">FR</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Travel Doc Guru</h1>
+            <p class="subtitle">Votre expert en immigration 24h/7</p>
+            
+            <div class="flags">
+                <div class="flag canada" title="Canada"></div>
+                <div class="flag germany" title="Allemagne"></div>
+                <div class="flag usa" title="États-Unis"></div>
+                <div class="flag uk" title="Royaume-Uni"></div>
+                <div class="flag spain" title="Espagne"></div>
+                <div class="flag france" title="France"></div>
+            </div>
+            
+            <a href="#expertise" class="cta-button">Découvrir mon expertise</a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div>Faire défiler</div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section id="expertise" class="section">
+            <h2>Mon Expertise</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Spécialisation Multi-Pays</h3>
+                    <p>Expert en immigration pour <span class="highlight">6 destinations privilégiées</span> : Canada, Allemagne, États-Unis, Royaume-Uni, Espagne et France. Je maîtrise les spécificités de chaque système d'immigration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Informations Officielles</h3>
+                    <p>Toutes mes réponses sont <span class="highlight">exclusivement basées</span> sur les informations gouvernementales officielles. Fini les informations contradictoires ou obsolètes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Réponses Précises & Structurées</h3>
+                    <p>Je vous fournis des réponses <span class="highlight">claires et organisées</span>, adaptées à votre situation spécifique pour faciliter vos démarches.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Votre Conseiller Personnel</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3>Disponible 24h/7</h3>
+                    <p>Pas d'horaires de bureau, pas d'attente. Je suis votre <span class="highlight">conseiller personnel</span> accessible à tout moment, quand vous en avez besoin.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Conseils Personnalisés</h3>
+                    <p>Mes services sont <span class="highlight">adaptés à votre profil</span>. Obtenez des recommandations ciblées selon votre situation spécifique.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Navigation Simplifiée</h3>
+                    <p>Fini les heures perdues sur les sites gouvernementaux complexes. Je <span class="highlight">simplifie l'accès</span> aux informations dont vous avez besoin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Ma Méthodologie</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Temps de Réponse</h3>
+                    <p>Mes réponses nécessitent généralement <span class="highlight">20 à 45 secondes</span> de traitement. Ce délai garantit la qualité et la précision des informations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Vérification Multi-Sources</h3>
+                    <p>Je <span class="highlight">vérifie systématiquement plusieurs sources officielles</span> en temps réel pour vous garantir des informations fiables.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Informations À Jour</h3>
+                    <p>Grâce à ma méthodologie rigoureuse, vous obtenez des informations <span class="highlight">pertinentes, fiables et actualisées</span>.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="stats">
+        <h2 style="color: white; margin-bottom: 3rem;">Impact Mesuré sur les Cabinets d'Immigration</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">Temps économisé</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300%</div>
+                <div class="stat-label">ROI moyen</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Cabinets sondés</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">Plus de clients</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section" style="text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 3rem; border-radius: 20px; margin: 4rem 0; border: 2px solid #10b981;">
+            <h2 style="color: #1f2937;">Cabinets d'Immigration : Automatisez Vos Consultations</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #555;">Perdez-vous 12-15h/semaine sur des questions répétitives de clients ?</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #667;">Travel Doc Guru peut s'intégrer à votre cabinet pour automatiser 80% des consultations de base.</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="#demo" class="cta-button">Demander une démo</a>
+                <a href="#contact" class="cta-button" style="background: linear-gradient(45deg, #3b82f6, #1e3a8a);">Parler à un expert</a>
+            </div>
+        </section>
+
+        <section id="business" class="section">
+            <h2>Solution B2B pour Cabinets d'Immigration</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Intégration Cabinet</h3>
+                    <p>Travel Doc Guru se déploie dans votre infrastructure existante. <span class="highlight">Votre marque, votre expertise</span>, notre technologie IA.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Gain de Temps</h3>
+                    <p>Réduisez de <span class="highlight">80% le temps</span> consacré aux questions répétitives. Vos avocats se concentrent sur les cas complexes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Augmentation du Chiffre d'Affaires</h3>
+                    <p>Servez <span class="highlight">3x plus de clients</span> avec la même équipe. ROI moyen de 300% dès la première année.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f8fafc; padding: 3rem; border-radius: 15px; border: 2px solid #e2e8f0;">
+            <h2 style="text-align: center; color: #1f2937;">Étude de Marché 2025 - Automatisation des Cabinets</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">Nous menons actuellement une étude sur l'automatisation dans les cabinets d'immigration nord-américains.</p>
+            
+            <div class="features">
+                <div class="feature-card" style="border: 2px solid #1e3a8a;">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Objectif de l'Étude</h3>
+                    <p>Comprendre les défis technologiques des cabinets d'immigration et identifier les solutions d'automatisation les plus pertinentes.</p>
+                </div>
+                
+                <div class="feature-card" style="border: 2px solid #10b981;">
+                    <div class="feature-icon">📊</div>
+                    <h3>Votre Participation</h3>
+                    <p>15 minutes d'entretien confidentiel pour partager votre expérience. En échange : accès privilégié aux résultats de l'étude.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#contact" class="cta-button">Participer à l'étude</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer" id="contact">
+        <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h3 style="margin-bottom: 1rem; color: #10b981;">Nous Contacter</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Pour les Particuliers</h4>
+                    <p>Consultations expertes 24h/7</p>
+                    <p>📧 infos@traveldocguru.com</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Pour les Cabinets</h4>
+                    <p>Démos B2B et intégrations</p>
+                    <p>📧 infos@traveldocguru.com</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Étude de Marché</h4>
+                    <p>Participation confidentielle</p>
+                    <p>📧 infos@traveldocguru.com</p>
+                    <p>🎁 Résultats exclusifs</p>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 2rem 0; opacity: 0.3;">
+        <p>&copy; 2025 Travel Doc Guru - Votre expert en immigration de confiance</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Informations basées exclusivement sur les sources gouvernementales officielles</p>
+    </footer>
+
+    <script>
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Défilement fluide pour les liens
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation des drapeaux au chargement
+        window.addEventListener('load', () => {
+            const flags = document.querySelectorAll('.flag');
+            flags.forEach((flag, index) => {
+                flag.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // CTA pour l'étude de marché
+        const studyButtons = document.querySelectorAll('a[href="#contact"]');
+        studyButtons.forEach(button => {
+            if (button.textContent.includes('étude') || button.textContent.includes('expert')) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Merci pour votre intérêt ! Un courriel sera envoyé à infos@traveldocguru.com pour organiser votre entretien de 15 minutes.');
+                });
+            }
+        });
+
+        // CTA pour les démos B2B
+        const demoButtons = document.querySelectorAll('a[href="#demo"]');
+        demoButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Démo personnalisée demandée ! Un expert vous contactera sous 24h à infos@traveldocguru.com');
+            });
+        });
+
+        // Fonction de changement de langue
+        function switchToEnglish() {
+            alert('Version anglaise bientôt disponible ! / English version available soon!');
+        }
+    </script>
+</body>
+</html>
